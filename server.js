@@ -8,12 +8,15 @@ const handle = app.getRequestHandler()
 app
   .prepare()
   .then(() => {
-    const server = express()
+    const server = express();
 
-    server.get('/a/:id', (req, res) => {
-      const actualPage = '/article'
-      const queryParams = { title: req.params.id }
-      app.render(req, res, actualPage, queryParams)
+    server.get('/results/:term', (req, res) => {
+      const actualPage = '/results'
+      const queryParams = {
+      search: req.params.term
+      };
+      console.log(queryParams);
+      return app.render(req, res, actualPage, queryParams)
     })
 
     server.get('*', (req, res) => {

@@ -1,4 +1,3 @@
-import Header from './Header';
 
 const layoutStyle = {
   margin: 20,
@@ -8,7 +7,6 @@ const layoutStyle = {
 
 const Layout = props => (
   <div style={layoutStyle}>
-    <Header />
     {props.children}
   </div>
 );
