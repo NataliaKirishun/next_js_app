@@ -1,25 +1,25 @@
+import React, { Component, Fragment } from 'react';
+import { withRouter } from 'next/router';
 import Layout from '../components/MyLayout.js'
-import Link from 'next/link'
+import './index.less'
+import Logo from '../components/Logo/Logo'
+import Search from '../components/Search/Search'
+import EmptyResult from '../components/EmptyResult/EmptyResult'
+import Footer from '../components/Footer/Footer'
 
-function ArticleLink(props) {
-  return (
-    <li>
-      <Link as={`/a/${props.id}`} href={`/article?title=${props.title}`}>
-        <a>{props.title}</a>
-      </Link>
-    </li>
-  )
-}
 
-export default function Blog() {
+ class Main extends Component {
+
+ render(){
   return (
     <Layout>
-      <h1>My Blog</h1>
-      <ul>
-        <ArticleLink id="first-article" title="First Article" />
-        <ArticleLink id="second-article" title="Second Article" />
-        <ArticleLink id="third-article" title="Third Article" />
-      </ul>
+      <Logo />
+      <Search />
+      <EmptyResult>Please, select your desired film...</EmptyResult>
+      <Footer />
     </Layout>
   )
 }
+}
+
+export default withRouter(Main);

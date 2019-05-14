@@ -10,9 +10,17 @@ app
   .then(() => {
     const server = express()
 
-    server.get('/a/:id', (req, res) => {
-      const actualPage = '/article'
-      const queryParams = { title: req.params.id }
+    server.get('/results/:searchBy/:sortBy/:sortOrder/:search/:offset/:limit', (req, res) => {
+        
+      const actualPage = '/results'
+      const queryParams = {
+      searchBy: req.params.searchBy,
+      sortBy: req.params.sortBy,
+      sortOrder: req.params.sortOrder,
+      search: req.params.search,
+      offset: req.params.offset,
+      limit: req.params.limit,
+      }
       app.render(req, res, actualPage, queryParams)
     })
 
