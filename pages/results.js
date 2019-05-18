@@ -1,5 +1,6 @@
-import React, { Component, Fragment } from 'react';
-import { withRouter } from 'next/router';
+import React, { Component, Fragment } from 'react'
+import { withRouter } from 'next/router'
+import dynamic from 'next/dynamic'
 import axios from 'axios';
 import Layout from '../components/MyLayout.js'
 import './index.less'
@@ -7,7 +8,8 @@ import Logo from '../components/Logo/Logo'
 import Search from '../components/Search/Search'
 import EmptyResult from '../components/EmptyResult/EmptyResult'
 import Footer from '../components/Footer/Footer'
-import Film from '../components/Film/Film'
+const Film = dynamic(() => import('../components/Film/Film'));
+
 
  class Results extends Component {
 
