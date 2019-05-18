@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Film = ({ info }) => (
   <div key={info.id}>
     <img src={info.poster_path} />

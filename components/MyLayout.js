@@ -1,12 +1,7 @@
-
-const layoutStyle = {
-  margin: 20,
-  padding: 20,
-  border: '1px solid #DDD'
-};
+import "./MyLayout.less";
 
 const Layout = props => (
-  <div style={layoutStyle}>
+  <div className="main">
     {props.children}
   </div>
 );

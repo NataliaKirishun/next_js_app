@@ -29,7 +29,7 @@ inputChangeHandler=(e)=>{
 
     render(){
         return(
-            <div>
+            <div class="search-wrapper">
                 <div className="title">find your movie</div>
                 <input type="text" ref="term" onChange={this.inputChangeHandler}/>
                 <SearchButton className="submit-btn" term={this.state.term}>search</SearchButton>
